@@ -6,8 +6,6 @@ const AddUserForm = (props) => {
     const { register, formState: { errors }, handleSubmit } = useForm();
 
     const onSubmit = (data, e) => {
-        console.log(data)
-
         props.addUser(data)
         // limpiar datos
         e.target.reset()

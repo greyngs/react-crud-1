@@ -3,7 +3,7 @@ import { useForm } from 'react-hook-form';
 
 const EditUserForm = (props) => {
 
-    const { register, formState: { errors }, handleSubmit , setValue} = useForm({
+    const { register, formState: { errors }, handleSubmit, setValue } = useForm({
         defaultValues: props.currentUser
     });
 
@@ -11,8 +11,6 @@ const EditUserForm = (props) => {
     setValue('username', props.currentUser.username);
 
     const onSubmit = (data, e) => {
-        //console.log(data)
-
         data.id = props.currentUser.id
         props.updateUser(props.currentUser.id, data)
 
@@ -23,9 +21,9 @@ const EditUserForm = (props) => {
     return (
         <form onSubmit={handleSubmit(onSubmit)}>
             <label htmlFor="name">Name</label>
-            <input type="text" {...register("name", { required: true })}/>
+            <input type="text" {...register("name", { required: true })} />
             {errors.name && errors.name.type === "required" && <span >Name is required</span>}
-            
+
 
             <label htmlFor="username">Username</label>
             <input type="text" {...register("username", { required: true })}
