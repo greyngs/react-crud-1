@@ -11,12 +11,6 @@ const Dashboard = () => {
         localStorage.setItem("usersData", JSON.stringify(array));
     }
 
-    const index = (list, id) => {
-        list.map(x => {
-            return x.Id;
-        }).indexOf(id);
-    }
-
     // state
     const [users, setUsers] = useState(usersData);
 
